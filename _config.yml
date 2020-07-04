@@ -31,7 +31,7 @@ fee_supervision_90_concession: 40
 description: >- # this means to ignore newlines until "baseurl:"
   Alison Jackson is an MBACP accredited Integrative Counsellor and Supervisor. Alison offers counselling by telephone, email, and in-person to people in Tavistock and Plymouth.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.cuthbertcounselling.co.uk/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.cuthbertcounselling.co.uk/" # the base hostname & protocol for your site, e.g. http://example.com
 
 google_analytics:
 
