@@ -8,7 +8,10 @@ $color-light-alt: #F0DDFF;
 $color-link: black;
 $color-link-active: purple;
 $color-link-visited: #707070;
-$color-error: red;
+
+$frame-border-width: 4px;
+$frame-border: $frame-border-width solid $color-dark;
+$main-border-radius: 1em;
 
 .site-nav {width: 100%; line-height: normal;}
 .site-footer {padding: 0; border: none;}
@@ -16,6 +19,8 @@ $color-error: red;
   padding: 0;
   background-color: $color-light;
 }
+
+:root {box-sizing: border-box;}
 
 body {
   background-color: $background-color-bottom;
@@ -26,8 +31,15 @@ body {
   min-height: 100vh;
   max-width: 1300px;
 }
+
+.edges {
+  @media screen and (min-width: 599px) {
+    border-left: $frame-border;
+    border-right: $frame-border;
+  }
+}
 		
-#banner-image {width:100%;}
+#banner-image {width: calc(100% - #{$frame-border-width} * 2);}
 #banner-title {
   font-weight: bold;
   font-size: 1.5em;
@@ -35,6 +47,11 @@ body {
   color: $color-light;
   background-color: $color-dark;
   margin: 0;
+  border-top-left-radius: $main-border-radius;
+  border-top-right-radius: $main-border-radius;
+  @media screen and (max-width: 600px) {
+    border-radius: 0;
+  }
 }
 #banner-title-image {
   height: 80px;
@@ -63,8 +80,9 @@ body {
 a.email {color: white; text-decoration: none;}
 a.email:hover {color: purple; text-decoration: none;}
 
-.site-nav {.nav-trigger {
-  display: none;
+.site-nav {
+  .nav-trigger {
+    display: none;
   }
   .menu-icon {
     display: none;
@@ -108,7 +126,6 @@ a.email:hover {color: purple; text-decoration: none;}
 
     @at-root input:checked ~ #nav.trigger {
       display: grid;
-      padding-bottom: 5px;
       grid-auto-flow: row;
       grid-auto-rows: 2em;
       font-size: 1.4em;
@@ -135,6 +152,7 @@ a.email:hover {color: purple; text-decoration: none;}
   border-top: .2em solid $color-dark;
 
   div {
+    $border-width: 1px;
     background-color: $background-color-bottom;
     width: 100%;
     height: 100%;
@@ -145,6 +163,16 @@ a.email:hover {color: purple; text-decoration: none;}
     color: $color-dark;
     text-decoration: none;
     font-weight: bold;
+    box-sizing: border-box;
+    border: $border-width solid black;
+    border-bottom-width: $border-width * 2;
+
+    @at-root input:checked #nav.trigger div {
+      @media screen and (max-width: 600px) {
+        border-left: none; border-right: none;
+      }
+    }
+
     &.nav-link-current {
       background-color: $color-link-active;
       a {
@@ -183,7 +211,7 @@ a.email:hover {color: purple; text-decoration: none;}
     padding: 0.5em;
     &.nav-link-current {
       background-color: transparent;
-      color: $color-link-active;
+      a {color: $color-link-active;}
     }
   }
 }
@@ -195,8 +223,8 @@ a.email:hover {color: purple; text-decoration: none;}
   text-align: center;
   font-weight: bold;
   font-size: 1.4em;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: $main-border-radius;
+  border-bottom-right-radius: $main-border-radius;
   background-color: black;
   p {
     padding: .1em .3em;

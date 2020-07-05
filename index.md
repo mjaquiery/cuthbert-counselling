@@ -4,6 +4,8 @@ nav_order: 0
 layout: page
 ---
 
+![Alison](/assets/alison.jpg)
+
 Are you looking for a counsellor or wondering whether counselling might help you?
 
 Counselling can help when we feel things are going wrong with our lives. Counselling can help us to understand the things that are going wrong and to work out what we can do to deal with them.

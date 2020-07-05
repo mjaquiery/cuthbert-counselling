@@ -1,5 +1,5 @@
 <footer class="site-footer h-card">
-  <div id="logos">
+  <div id="logos" class="edges">
     <a href="http://www.bacp.co.uk/" target="_blank"><img src="assets/bacp.gif" alt="BACP Logo" title="British Association of Counsellors and Psychotherapists" id="bacplogo"/></a>
     <a href="http://www.bacpregister.org.uk/public/" target="_blank"><img src="assets/190423_print_logo.jpg" alt="BACP Registered Member #190423" title="BACP Registered Member #190423" id="bacp"/></a>
   </div>
@@ -10,12 +10,11 @@
   </div>
   {% assign page_paths = "Home;About Cuthbert Counselling;Frequently Asked Questions;Sessions & Fees;What is Counselling;Supervision;Contact" | split: ';' %}
   <div id="bottom-nav">
-    {%- for path in page_paths -%}
-      <div class="nav-link{% if path == 'About Cuthbert Counselling' %} nav-link-current{% endif %}" href="/" title="Home">{{ path }}</a></div>
-      {%- assign my_page = site.pages | where: "path", path | first -%}
-      {%- if my_page.title -%}
-      {%- endif -%}
-      {%- endfor -%}
+    {% assign sorted_pages = site.pages | sort:"nav_order" %}
+    {%- for p in sorted_pages -%}
+    {%- if p.title -%}
+      <div class="nav-link{% if p.title == page.title %} nav-link-current{% endif %}"><a href="{{ p.url }}" title="{{ p.title | escape }}">{{ p.title | escape }}</a></div>
+    {%- endif -%}
+    {%- endfor -%}
   </div>
-
 </footer>

@@ -3,8 +3,8 @@
     <p id="banner-title">
       <a href="/" title="Return to the Homepage"><img src="/assets/cuthbertcounselling.jpg" id="banner-title-image" alt="Cuthbert Counselling"/></a>
     </p>
-    <img id="banner-image" src="/assets/banner.jpg" alt="Banner Image"/>
-    <div id="banner-text">
+    <img id="banner-image" class="edges" src="/assets/banner.jpg" alt="Sunset Banner Image"/>
+    <div id="banner-text" class="edges">
       <div class="banner-sting">
         <p>Professional Counselling</br>in Tavistock and Plymouth</p>
       </div>
@@ -24,7 +24,7 @@
           </span>
     </label>
 
-    <div id="nav" class="trigger">
+    <div id="nav" class="trigger edges">
       {% assign sorted_pages = site.pages | sort:"nav_order" %}
       {%- for p in sorted_pages -%}
         {%- if p.title -%}
