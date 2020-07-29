@@ -12,7 +12,7 @@ We begin with an initial consultation session. At this meeting we explore why yo
 
 _Where do the sessions take place?_
 
-I offer sessions in Tavistock and Plymouth. Tavistock sessions are held in a private room in [Abbey Mead Natural Health Centre](http://www.abbey-mead.co.uk/index.html) and Plymouth sessions are held at [Plymouth Natural Health and Healing Centre](http://plymouthnaturalhealth.org.uk/) in Plymouth.
+I offer sessions in Tavistock and online. Tavistock sessions are held in a private room in [Abbey Mead Natural Health Centre](http://www.abbey-mead.co.uk/index.html).
 
 _When are appointments available?_
 
